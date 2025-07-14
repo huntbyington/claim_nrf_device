@@ -1,0 +1,5 @@
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu
+
+source "subsys/logging/Kconfig.template.log_config"
