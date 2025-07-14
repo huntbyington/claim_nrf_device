@@ -8,6 +8,8 @@
 #include <modem/at_monitor.h>
 #include <modem/modem_info.h>
 
+LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
+
 #define DEBOUNCE_TIME 20
 
 #define SW1_NODE DT_ALIAS(sw1)
@@ -26,12 +28,12 @@ void send_at_command(void)
     if (ret == 0)
     {
         // Success, response now contains the modem's reply
-        printf("Modem response: %s\n", response);
+        LOG_INF("Modem response: %s\n", response);
     }
     else
     {
         // Handle error
-        printf("Failed to send AT command, error: %d\n", ret);
+        LOG_ERR("Failed to send AT command, error: %d\n", ret);
     }
 }
 
@@ -53,7 +55,7 @@ int main(void)
 {
     if (!device_is_ready(button.port))
     {
-        printf("Failed to initialize button");
+        LOG_ERR("Failed to initialize button");
         return -1;
     }
     gpio_flags_t flags = GPIO_INPUT | GPIO_PULL_UP;
