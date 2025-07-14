@@ -34,3 +34,7 @@ This application demonstrates how to use a button press to trigger an AT command
 ## Example Output
 
 When you press the button, you should see output similar to:
+
+AT&ATTESTTOKEN
+"UUID"
+OK
