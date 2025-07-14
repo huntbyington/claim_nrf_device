@@ -25,7 +25,7 @@ void send_at_command(void)
     int ret;
 
     // Send an AT command and get the response
-    ret = nrf_modem_at_cmd(response, sizeof(response), "AT&ATTESTTOKEN");
+    ret = nrf_modem_at_cmd(response, sizeof(response), "AT%%ATTESTTOKEN");
     if (ret == 0)
     {
         // Success, response now contains the modem's reply
@@ -54,6 +54,12 @@ static void debounce_timer_cb(struct k_timer *timer)
 
 int main(void)
 {
+    if (nrf_modem_lib_init())
+    {
+        LOG_ERR("Failed to initialize modem library");
+        return -1;
+    }
+
     // Initialize button port
     if (!device_is_ready(button.port))
     {
