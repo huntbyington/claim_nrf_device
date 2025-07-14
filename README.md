@@ -1,7 +1,5 @@
 # README: Button-Triggered AT Command for nRF91 Series
 
-# A first-level heading
-
 This application demonstrates how to use a button press to trigger an AT command on an nRF91 Series device using the nRF Connect SDK. When the button is pressed, the application sends an AT command to the modem and prints the response. This can be used, for example, to retrieve information from the modem that may be required for device claiming or attestation.
 
 ## Features
