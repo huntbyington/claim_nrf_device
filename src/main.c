@@ -1,5 +1,6 @@
 #include <string.h>
 #include <zephyr/kernel.h>
+#include <zephyr/logging/log.h>
 #include <zephyr/drivers/gpio.h>
 #include <stdio.h>
 #include <stdlib.h>
