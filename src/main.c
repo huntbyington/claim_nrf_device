@@ -1,5 +1,6 @@
 #include <string.h>
 #include <zephyr/kernel.h>
+#include <zephyr/drivers/gpio.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <nrf_modem_at.h>
@@ -52,7 +53,7 @@ int main(void)
 {
     if (!device_is_ready(button.port))
     {
-        LOG_ERR("Failed to initialize button");
+        printf("Failed to initialize button");
         return -1;
     }
     gpio_flags_t flags = GPIO_INPUT | GPIO_PULL_UP;

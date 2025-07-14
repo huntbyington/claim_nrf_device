@@ -1,0 +1,12 @@
+/ {
+    aliases {
+        sw1 = &button1;
+    };
+    buttons {
+        compatible = "gpio-keys";
+        button1: button_1 {
+            gpios = <&gpio0 24 GPIO_ACTIVE_LOW>; /* P0.24 */
+            label = "Push button switch 1";
+        };
+    };
+};
