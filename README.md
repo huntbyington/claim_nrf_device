@@ -10,7 +10,7 @@ This application demonstrates how to use a button press to trigger an AT command
 
 ## Requirements
 
-- nRF91 Series device (e.g., nRF9160 DK, nRF9161 DK, Thingy:91, etc.)
+- nRF91 Series device (e.g., nRF9160 DK, nRF9151 DK, Thingy:91, etc.)
 - nRF Connect SDK with the following libraries enabled:
   - Modem library (`CONFIG_NRF_MODEM_LIB`)
   - AT command interface (`nrf_modem_at.h`)
@@ -31,7 +31,7 @@ This application demonstrates how to use a button press to trigger an AT command
 3. **Debounce Logic:**
    - After the debounce period, the button interrupt is re-enabled to allow for subsequent presses.
 
-## Example Output
+## Example UART Output
 
 When you press the button, you should see output similar to:
 

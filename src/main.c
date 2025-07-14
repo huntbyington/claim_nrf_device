@@ -33,7 +33,7 @@ void send_at_command(void)
     }
     else
     {
-        // Handle error
+        // Error
         LOG_ERR("Failed to send AT command, error: %d\n", ret);
     }
 }
@@ -54,6 +54,7 @@ static void debounce_timer_cb(struct k_timer *timer)
 
 int main(void)
 {
+    // Initialize button port
     if (!device_is_ready(button.port))
     {
         LOG_ERR("Failed to initialize button");
